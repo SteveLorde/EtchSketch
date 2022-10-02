@@ -1,0 +1,43 @@
+body {
+    margin: 0%;
+    background-color: blue;
+}
+
+.MainWindow {
+    margin: 5%;
+    background-color: grey;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.ButtonAndScreen {
+    display: flex;
+    margin: 1%;
+    padding: 10%;
+    background-color: red;
+    width: 80%;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.button {
+    border-style: solid;
+    border-width: 5px;
+    background-color: white;
+    margin: 5%;
+    padding: 20px 40px;
+    text-align: center;
+}
+
+.Screen {
+    display: grid;
+	border-style: solid;
+    border-width: 10px;
+    background-color: white;
+    margin: 10%;
+    width: 300px;
+    height: 300px;
+    flex: 1;
+}
