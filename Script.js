@@ -1,18 +1,28 @@
 
-//1-Function to Create Grid
-function PixelCanvasCreate() {
-    let ScreenCanvas=document.getElementsByClassName('Screen')
+let draw = false
 
-    for (let i = 0; i < 11; i++) {
-        let myRow = document.createElement('div')
-        myRow.id = 'row' + i
+function populateBoard() {
+let board = document.querySelector(".Screen");
+board.style.gridTemplateColumns = "repeat(24 , 1fr)";
+board.style.gridTemplateRows = "repeat(24 , 1fr)";
 
-        ScreenCanvas.appendChild(myRow)
-
-        
-    }
-    
+for (let i = 0; i < 24*24; i++) {
+    let square = document.createElement('div')
+    square.style.backgroundColor = 'white'
+    square.style.borderWidth = "1px"
+    square.style.borderStyle = "solid"
+    board.insertAdjacentElement("beforeend", square)
+    square.addEventListener('dragenter', function(){
+        if (!draw) return
+        square.style.backgroundColor = 'black'
+    })
+}
 }
 
-BTNGRIDNEW = document.getElementsByClassName('buttonclear')
-BTNGRIDNEW.onclick = PixelCanvasCreate()
+window.addEventListener("mousedown", function(){
+    draw = true
+})
+window.addEventListener("drag", function(){
+    draw = true
+})
+populateBoard()
